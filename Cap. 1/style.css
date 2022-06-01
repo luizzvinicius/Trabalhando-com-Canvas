@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.min {
+    min-width: 360px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.titulo {
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+}
+
+.paragraph {
+    text-indent: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 1rem 0;
+}
+
+canvas {
+    border: 1px solid black;
+}

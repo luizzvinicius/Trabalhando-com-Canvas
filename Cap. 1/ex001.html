@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script1.js"></script>
+    <script src="script1.js" defer></script>
     <title>Exercícios</title>
 </head>
+
 <body>
-    
+    <div class="min">
+        <div class="titulo">Canvas</div>
+        <p class="paragraph">
+            Tag canvas: tag a qual pode-se criar elementos animados
+        </p>
+        <p class="paragraph">Canvas 1:</p>
+        <p class="paragraph">
+            fillRect(x, y, largura, altura): pinta completamente uma área.
+        </p>
+        <p class="paragraph">
+            strokeRect(x, y, largura, altura): desenha um contorno.
+        </p>
+        <div class="center">
+            <canvas id="canvas1" width="360" height="200">
+                Seu navegador não suporta canvas
+            </canvas>
+        </div>
+
+        <p class="paragraph">Canvas 2:</p>
+        <p class="paragraph">
+            fillStyle: cor do preenchimento
+
+        </p>
+        <p class="paragraph">
+            strokeStyle: cor da linha
+        </p>
+        <p class="paragraph">
+            lineWidth: espessura da linha em pixels
+        </p>
+        <div class="center">
+            <canvas id="canvas2" width="360" height="200">
+                Seu navegador não suporta canvas
+            </canvas>
+        </div>
+
+        <p class="paragraph">Canvas 3:</p>
+        <p class="paragraph">
+            beginPath(): inicia o desenho
+
+        </p>
+        <p class="paragraph">
+            fill(): preenche o desenho
+        </p>
+        <p class="paragraph">
+            <code>stroke()</code>: desenha o contorno
+        </p>
+        <p class="paragraph">
+            <code>moveTo(x, y)</code>: ponto inicial e <code>lineTo(x, y)</code>: desenha uma linha até a posição (x, y)
+        </p>
+        <div class="center">
+            <canvas id="canvas3" width="360" height="200">
+                Seu navegador não suporta canvas
+            </canvas>
+        </div>
+
+        <p class="paragraph">Canvas 4:</p>
+        <p class="paragraph">
+            x, y: as coordenadas do ponto central da circunferência;
+
+        </p>
+        <p class="paragraph">
+            raio da circunferência em pixels;
+        </p>
+        <p class="paragraph">
+            ângulo inicial em radianos;
+        </p>
+        <p class="paragraph">
+            ângulo final em radianos;
+        </p>
+        <p class="paragraph">
+            sentido: false (anti-horário) ou true
+            (sentido horário). Este parâmetro é opcional; se omitido, o desenho é feito no sentido anti-horário.
+        </p>
+        <div class="center">
+            <canvas id="canvas4" width="360" height="200">
+                Seu navegador não suporta canvas
+            </canvas>
+        </div>
+
+        <p class="paragraph">Canvas 5:</p>
+        <div class="center">
+            <canvas id="canvas5" width="360" height="200">
+                Seu navegador não suporta canvas
+            </canvas>
+            
+        </div>
+    </div>
 </body>
+
 </html>

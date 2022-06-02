@@ -53,10 +53,41 @@ const context5 = canvas5.getContext('2d')
 let img = new Image()
 img.src = '../games-js-master/01/img/ovni.png'
 
-img.onload = function() {
+img.onload = function () {
     let pos = 5 // 1º img no ponto 4
     for (let index = 0; index < 5; index++) {
         context5.drawImage(img, pos, 10, 64, 32)
         pos += 70
     }
 }
+
+// Canvas 6
+const canvas6 = document.querySelector('#canvas6')
+const context6 = canvas6.getContext('2d')
+
+let x = 30
+let y = 100
+let raio = 50
+
+let anteior = new Date().getTime()
+requestAnimationFrame(mexer)
+
+function mexer() {
+    let atual = new Date().getTime()
+    let decorrido = atual - anteior
+    // Dá a sensação de velocidade
+    
+    context6.clearRect(0, 0, canvas6.width, canvas6.height)
+    context6.drawImage(img, x, 10, 64, 32)
+    // context6.clearRect(0, 0, canvas6.width, canvas6.height);
+    // context6.beginPath()
+    // context6.arc(x, y, raio, 0, Math.PI * 2)
+    // context6.stroke()
+
+    let speed = 50
+    x += speed * decorrido / 1000
+    requestAnimationFrame(mexer)
+}
+
+// Orientação a Objetos
+

@@ -1,7 +1,14 @@
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #222831;
+    color: #eeeeee;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.2rem;
 }
 
 .min {
@@ -13,10 +20,12 @@ body {
 .titulo {
     padding: 1rem 0 1rem 0;
     text-align: center;
+    font-size: 4rem;
 }
 
 .paragraph {
-    text-indent: 20px;
+    padding-left: 1rem;
+    padding-bottom: 3px;
 }
 
 .center {
@@ -26,5 +35,7 @@ body {
 }
 
 canvas {
-    border: 1px solid black;
+    background-color: white;
+    border: 2px solid #ffa500;
+    border-radius: 5px;
 }

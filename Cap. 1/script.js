@@ -76,7 +76,7 @@ function mexer() {
     let atual = new Date().getTime()
     let decorrido = atual - anteior
     // Dá a sensação de velocidade
-    
+
     context6.clearRect(0, 0, canvas6.width, canvas6.height)
     context6.drawImage(img, x, 10, 64, 32)
     // context6.clearRect(0, 0, canvas6.width, canvas6.height);
@@ -90,4 +90,28 @@ function mexer() {
 }
 
 // Orientação a Objetos
+// Tarefas de acelerar, frear e virar
 
+
+class Carro {
+    constructor(cor, velocidadeMaxima) {
+        this.cor = cor
+        this.velocidadeMaxima = velocidadeMaxima
+        this.velocidadeAtual = 0
+    }
+
+    acelerar() {
+        this.velocidadeAtual += 25
+    }
+}
+
+let meuCarro = new Carro('Marrom', 234)
+let oponente = new Carro('Azul', 231)
+
+this.acelerar = function () {
+    this.velocidadeAtual += 25
+}
+
+meuCarro.acelerar()
+let res = document.querySelector('#res')
+res.innerHTML = `<p class="paragraph">Cor: ${meuCarro.cor} <br> Velocidade atual: ${meuCarro.velocidadeAtual}</p>`

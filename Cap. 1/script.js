@@ -92,7 +92,6 @@ function mexer() {
 // Orientação a Objetos
 // Tarefas de acelerar, frear e virar
 
-
 class Carro {
     constructor(cor, velocidadeMaxima) {
         this.cor = cor
@@ -107,10 +106,6 @@ class Carro {
 
 let meuCarro = new Carro('Marrom', 234)
 let oponente = new Carro('Azul', 231)
-
-this.acelerar = function () {
-    this.velocidadeAtual += 25
-}
 
 meuCarro.acelerar()
 let res = document.querySelector('#res')

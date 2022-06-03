@@ -26,6 +26,7 @@ body {
 .paragraph {
     padding-left: 1rem;
     padding-bottom: 3px;
+    user-select: none;
 }
 
 .center {

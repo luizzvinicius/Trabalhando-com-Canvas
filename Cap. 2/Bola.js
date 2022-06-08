@@ -1,5 +1,4 @@
-import { canvas1, context } from './Animacao.js'
-export class Bola {
+class Bola {
     constructor(context) {
         this.context = context
         this.x = 0
@@ -11,7 +10,7 @@ export class Bola {
     }
 
     atualizar() {
-        //let ctx = this.context
+        let canvas1 = this.context.canvas
 
         if (this.x < this.raio || this.x > canvas1.width - this.raio) {
             this.velo_x *= -1
@@ -21,17 +20,17 @@ export class Bola {
             this.velo_y *= -1
         }
 
-        this.x = this.velo_x
-        this.y = this.velo_y
+        this.x += this.velo_x
+        this.y += this.velo_y
     }
 
     desenhar() {
-        //let ctx = this.context
+        let context = this.context
         context.save()
         context.fillStyle = this.cor
 
         context.beginPath()
-        context.arc(this.x, this.y, 0, Math.PI * 2, false)
+        context.arc(this.x, this.y, this.raio, Math.PI * 2, false)
         context.fill()
 
         context.restore()

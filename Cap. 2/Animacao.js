@@ -13,7 +13,6 @@ class Animacao {
     }
     
     limpartela() {
-        //let ctx = this.context
         context.clearRect(0, 0, canvas1.width, canvas1.height)
     }
     
@@ -42,15 +41,15 @@ class Animacao {
 let bola1 = new Bola(context)
 bola1.x = 100
 bola1.y = 20
-bola1.velo_x = 10
-bola1.velo_y = 10
+bola1.velo_x = 5
+bola1.velo_y = 3
 bola1.cor = 'blue'
 bola1.raio = 12
 
 let bola2 = new Bola(context)
 bola2.x = 200
-bola2.y = 100
-bola2.velo_x = 10
+bola2.y = 20
+bola2.velo_x = 6
 bola2.velo_y = 10
 bola2.cor = 'red'
 bola2.raio = 20

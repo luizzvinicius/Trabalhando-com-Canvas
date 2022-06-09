@@ -37,6 +37,6 @@ body {
 
 canvas {
     background-color: white;
-    border: 2px solid #ffa500;
+    outline: 2px solid #ffa500;
     border-radius: 5px;
 }

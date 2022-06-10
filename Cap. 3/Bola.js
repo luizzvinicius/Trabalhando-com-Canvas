@@ -10,16 +10,6 @@ class Bola {
     }
 
     atualizar() {
-        let canvas = this.context.canvas
-
-        if (this.x < this.raio || this.x > canvas.width - this.raio) {
-            this.velo_x *= -1
-        }
-        
-        if (this.y < this.raio || this.y > canvas.height - this.raio) {
-            this.velo_y *= -1
-        }
-
         this.x += this.velo_x
         this.y += this.velo_y
     }

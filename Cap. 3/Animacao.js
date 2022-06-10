@@ -1,6 +1,6 @@
 class Animacao {
-    constructor(context) {
-        this.context = context
+    constructor(ctx) {
+        this.ctx = ctx
         this.sprites = []
         this.ligado = false
     }
@@ -10,7 +10,7 @@ class Animacao {
     }
     
     limpartela() {
-        context.clearRect(0, 0, canvas2.width, canvas2.height)
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     }
     
     proximoFrame() {
@@ -34,15 +34,3 @@ class Animacao {
         this.ligado = false
     }
 }
-
-// let bola1 = new Bola(context)
-// bola1.x = 100
-// bola1.y = 20
-// bola1.velo_x = 5
-// bola1.velo_y = 3
-// bola1.cor = 'blue'
-// bola1.raio = 12
-
-// let animacao = new Animacao(context)
-// animacao.novoSprite(bola1)
-// animacao.ligar()

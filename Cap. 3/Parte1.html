@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Cap. 3</title>
+</head>
+
+<body>
+    <div class="min">
+        <div class="titulo">Capítulo 3.1</div>
+        
+        <p class="paragraph">Parte 1:</p>
+        <div class="center">
+            <canvas id="canvas1" width="360" height="200">
+                Seu navegador não suporta canvas
+            </canvas>
+        </div>
+    </div>
+    <script>
+        const canvas = document.querySelector('#canvas1')
+        const ctx = canvas.getContext('2d')
+
+        let pos = 130
+        let tam = 20
+
+        desenharPersonagem()
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key == "ArrowLeft") {
+                if (pos <= 0) return
+                pos -= 10
+            } else if (e.key == "ArrowRight") {
+                if (pos >= canvas.width - tam) return
+                pos += 10
+            }
+
+            desenharPersonagem()
+        })
+
+        function desenharPersonagem() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            ctx.fillRect(pos, 100, tam, 20)
+        }
+    </script>
+
+</body>
+
+</html>

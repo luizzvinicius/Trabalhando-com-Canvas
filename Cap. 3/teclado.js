@@ -2,14 +2,14 @@ class Teclado {
     constructor(elem) {
         this.elem = elem
         this.pressionadas = []
-        let teclado = this
 
         elem.addEventListener('keydown', (e) => {
-            teclado.pressionadas[e.key] = true
+            this.pressionadas[e.key] = true
+            console.log(e.key)
         })
 
         elem.addEventListener('keyup', (e) => {
-            teclado.pressionadas[e.key] = false
+            this.pressionadas[e.key] = false
         })
     }
 
@@ -17,7 +17,7 @@ class Teclado {
         return this.pressionadas[tecla]
     }
 
-    disparou(espaco) {
-        heroi.atirar()
-    }
+    // disparou(espaco) {
+    //     heroi.atirar()
+    // }
 }

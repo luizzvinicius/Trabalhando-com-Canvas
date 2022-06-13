@@ -13,3 +13,4 @@ animacao.novoSprite(hero)
 teclado.disparou("Space", hero.atirar())
 
 animacao.ligar()
+//teste

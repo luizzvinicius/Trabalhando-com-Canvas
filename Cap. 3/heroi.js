@@ -1,3 +1,4 @@
+'use strict'
 class Heroi {
   constructor(ctx, teclado, animacao) {
     this.ctx = ctx
@@ -12,7 +13,7 @@ class Heroi {
 
   desenhar() {
     //ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-    ctx.fillRect(this.posX, this.posY, this.tam, this.alt)
+    this.ctx.fillRect(this.posX, this.posY, this.tam, this.alt)
   }
 
   atualizar() { // esquerda 1 e direita 2
@@ -26,18 +27,22 @@ class Heroi {
   }
 
   atirar() {
-    let tiro = new Bola(this.ctx)
-    tiro.x = this.x + 10
-    tiro.y = this.y + 10
-    tiro.raio = 5
-    tiro.cor = 'red'
+    if (this.teclado.pressionada('t')) {
+      let tiro = new Bola(this.ctx)
+      tiro.x = this.x + 10
+      tiro.y = this.y + 10
+      tiro.raio = 5
+      tiro.cor = 'red'
 
-    if (this.direcao == 1) {
-      tiro.velo_x = -20
-    } else if (this.direcao == 2) {
-      tiro.velo_x = 20
+      // if (this.direcao == 1) {
+      //   tiro.velo_x = -20
+      // } else if (this.direcao == 2) {
+      //   tiro.velo_x = 20
+      // }
+
+      this.animacao.novoSprite(tiro)
     }
 
-    this.animacao.novoSprite(tiro)
+
   }
 }

@@ -1,3 +1,4 @@
+'use strict'
 class Animacao {
     constructor(ctx) {
         this.ctx = ctx
@@ -5,14 +6,10 @@ class Animacao {
         this.ligado = false
     }
 
-    novoSprite(sprite) {
-        this.sprites.push(sprite)
-    }
-    
     limpartela() {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     }
-    
+
     proximoFrame() {
         if (!this.ligado) return
 
@@ -23,6 +20,10 @@ class Animacao {
 
         let animacao = this
         requestAnimationFrame(() => animacao.proximoFrame())
+    }
+    
+    novoSprite(sprite) {
+        this.sprites.push(sprite)
     }
 
     ligar() {

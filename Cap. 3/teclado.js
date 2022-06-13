@@ -1,3 +1,4 @@
+'use strict'
 class Teclado {
   constructor(elem) {
     this.elem = elem
@@ -7,11 +8,13 @@ class Teclado {
 
     elem.addEventListener('keydown', (e) => {
       this.pressionadas[e.key] = true
+      //console.log(e.key)
 
       if (this.funcoesDisparo[e.key] && !this.disparadas[e.key]) {
         this.disparadas[e.key] = true
         this.funcoesDisparo[e.key]()
       }
+
     })
 
     elem.addEventListener('keyup', (e) => {
@@ -24,7 +27,9 @@ class Teclado {
     return this.pressionadas[tecla]
   }
 
-  disparou(tecla, callback) {
-    this.funcoesDisparo[tecla] = callback
+  disparou(codigoTecla) {
+    return this.funcoesDisparo[codigoTecla]
   }
 }
+
+//t no lugar de espaço

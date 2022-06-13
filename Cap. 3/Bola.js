@@ -1,3 +1,4 @@
+'use strict'
 class Bola {
     constructor(context) {
         this.context = context

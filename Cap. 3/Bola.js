@@ -19,11 +19,9 @@ class Bola {
         let context = this.context
         context.save()
         context.fillStyle = this.cor
-
         context.beginPath()
         context.arc(this.x, this.y, this.raio, Math.PI * 2, false)
         context.fill()
-
         context.restore()
     }
 }

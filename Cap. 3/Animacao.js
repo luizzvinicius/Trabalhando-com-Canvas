@@ -5,21 +5,15 @@ class Animacao {
         this.sprites = []
         this.ligado = false
     }
-
-    limpartela() {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-    }
-
+    
     proximoFrame() {
         if (!this.ligado) return
 
         this.limpartela()
-
         this.sprites.forEach(sprite => sprite.atualizar())
         this.sprites.forEach(sprite => sprite.desenhar())
 
-        let animacao = this
-        requestAnimationFrame(() => animacao.proximoFrame())
+        requestAnimationFrame(() => this.proximoFrame())
     }
     
     novoSprite(sprite) {
@@ -33,5 +27,9 @@ class Animacao {
 
     desligar() {
         this.ligado = false
+    }
+
+    limpartela() {
+        this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
     }
 }

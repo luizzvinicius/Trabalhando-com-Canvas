@@ -11,6 +11,6 @@ hero.tam = 40
 
 animacao.novoSprite(hero)
 hero.atirar()
-//teclado.disparou(84)
+//teclado.disparou('ArrowUp')
 
 animacao.ligar()

@@ -1,4 +1,8 @@
 'use strict'
+let SETA_ESQUERDA = 37;
+let SETA_DIREITA = 39;
+let ESPACO = 32;
+
 class Teclado {
   constructor(elem) {
     this.elem = elem
@@ -7,17 +11,18 @@ class Teclado {
     this.funcoesDisparo = []
 
     elem.addEventListener('keydown', (e) => {
-      this.pressionadas[e.key] = true
+      let tecla = e.keyCode
+      this.pressionadas[tecla] = true
       
-      if (this.funcoesDisparo[e.key] && !this.disparadas[e.key]) {
-        this.disparadas[e.key] = true
-        this.funcoesDisparo[e.key]()    
+      if (this.funcoesDisparo[tecla] && !this.disparadas[tecla]) {
+        this.disparadas[tecla] = true
+        this.funcoesDisparo[tecla] ()    
       }
     })
 
     elem.addEventListener('keyup', (e) => {
-      this.pressionadas[e.key] = false
-      this.disparadas[e.key] = false
+      this.pressionadas[e.keyCode] = false
+      this.disparadas[e.keyCode] = false
     })
   }
 
@@ -25,7 +30,7 @@ class Teclado {
     return this.pressionadas[tecla]
   }
 
-  disparou(codigoTecla) {
-    return this.funcoesDisparo[codigoTecla]
+  disparou(tecla, callback) {
+   this.funcoesDisparo[tecla] = callback
   }
 }

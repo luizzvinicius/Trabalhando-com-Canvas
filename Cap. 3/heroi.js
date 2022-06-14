@@ -1,4 +1,7 @@
 'use strict'
+let DIRECAO_ESQUERDA = 1;
+let DIRECAO_DIREITA = 2;
+
 class Heroi {
   constructor(ctx, teclado, animacao) {
     this.ctx = ctx
@@ -8,38 +11,37 @@ class Heroi {
     this.posY = 70
     this.tam = 25
     this.alt = 50
-    this.direcao = 2
+    this.direcao = DIRECAO_DIREITA
   }
 
-  atualizar() { // esquerda 1 e direita 2
-    if (this.teclado.pressionada('ArrowLeft') && this.posX >= 10) {
-      this.direcao = 1
+  atualizar() {
+    if (this.teclado.pressionada(SETA_ESQUERDA) && this.posX >= 10) {
+      this.direcao = DIRECAO_ESQUERDA
       this.posX -= 10
-    } else if (this.teclado.pressionada('ArrowRight') && this.posX < ctx.canvas.width - this.tam) {
-      this.direcao = 2
+    } else if (this.teclado.pressionada(SETA_DIREITA) && this.posX < ctx.canvas.width - this.tam) {
+      this.direcao = DIRECAO_DIREITA
       this.posX += 10
     }
   }
 
   atirar() {
-    if (this.teclado.pressionada('ArrowUp')) {
-      let tiro = new Bola(this.ctx)
-      tiro.x = this.x + 10
-      tiro.y = this.y + 10
-      tiro.velo_x = 12
+    let tiro = new Bola(this.ctx)
+    tiro.x = this.posX + 10
+    tiro.y = this.posY + 10
+    tiro.raio = 5
+    tiro.velo_x = 12
 
-      if (this.direcao == 1) {
-        tiro.velo_x = -20
-      } else if (this.direcao == 2) {
-        tiro.velo_x = 20
-      }
-
-      this.animacao.novoSprite(tiro)
+    if (this.direcao == DIRECAO_ESQUERDA) {
+      tiro.velo_x = -20
+    } else if (this.direcao == DIRECAO_DIREITA) {
+      tiro.velo_x = 20
     }
+
+    this.animacao.novoSprite(tiro)
+    console.log('atirou')
   }
 
   desenhar() {
-    // this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
     this.ctx.fillRect(this.posX, this.posY, this.tam, this.alt)
   }
 }

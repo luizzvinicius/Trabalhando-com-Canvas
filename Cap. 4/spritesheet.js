@@ -12,7 +12,6 @@ class SpriteSheet {
 
     proximoQuadro() {
         let agora = new Date().getTime()
-        //let ultimoTempo = 1
 
         if (!this.ultimoTempo) this.ultimoTempo = agora
 
@@ -35,12 +34,9 @@ class SpriteSheet {
             this.imagem,
             largura * this.coluna,
             altura * this.linha,
-            largura,
-            altura,
-            x,
-            y,
-            largura,
-            altura
+            largura, altura,
+            x, y,
+            largura, altura
         )
     }
 

@@ -2,9 +2,6 @@
 const canvas = document.querySelector('#canvas1')
 const ctx = canvas.getContext('2d')
 
-let imgSonic = new Image()
-imgSonic.setAttribute('src', '../games-js-master/04/spritesheet.png')
-
 // imgSonic.addEventListener('load', () => {
 //     let linhas = 3
 //     let colunas = 8 // Mapeia a imagem
@@ -23,10 +20,23 @@ imgSonic.setAttribute('src', '../games-js-master/04/spritesheet.png')
 
 // })
 
+let imgSonic = new Image()
+//imgSonic.setAttribute('src', '../games-js-master/04/spritesheet.png')
+imgSonic.src = '../games-js-master/04/spritesheet.png'
+
+let teclado = new Teclado(document)
+let animacao = new Animacao(ctx)
+let sonic  = new Sonic(ctx, teclado, imgSonic)
+sonic.x = 0
+sonic.y = 100
+
+animacao.novoSprite(sonic)
+
 let sheet = new SpriteSheet(ctx, imgSonic, 3, 8)
 sheet.intervalo = 60
 sheet.linha = 1
-imgSonic.addEventListener('load', gameLoop)
+//imgSonic.addEventListener('load', gameLoop)
+imgSonic.onload = animacao.ligar()
 
 function gameLoop() {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
@@ -35,3 +45,4 @@ function gameLoop() {
 sheet.proximoQuadro()
 sheet.desenhar(100, 100)
 requestAnimationFrame(gameLoop)
+animacao.ligar()

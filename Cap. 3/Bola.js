@@ -13,7 +13,6 @@ class Bola {
     atualizar() {
         this.x += this.velo_x
         this.y += this.velo_y
-        console.log(this.x)
     }
 
     desenhar() {
@@ -24,6 +23,5 @@ class Bola {
         context.arc(this.x, this.y, this.raio, Math.PI * 2, false)
         context.fill()
         context.restore()
-        console.log('desenhou')
     }
 }

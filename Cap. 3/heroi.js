@@ -21,6 +21,10 @@ class Heroi {
     } else if (this.teclado.pressionada(SETA_DIREITA) && this.posX < ctx.canvas.width - this.tam) {
       this.direcao = DIRECAO_DIREITA
       this.posX += 10
+    } else if (this.teclado.pressionada(SETA_BAIXO) && this.posY < this.ctx.canvas.height - this.alt) {
+      this.posY += 10
+    } else if (this.teclado.pressionada(SETA_CIMA) && this.posY >= 10) {
+      this.posY -= 10
     }
   }
 
@@ -29,7 +33,7 @@ class Heroi {
     tiro.x = this.posX + 10
     tiro.y = this.posY + 10
     tiro.raio = 5
-    tiro.velo_x = 12
+    tiro.velo_x = 7
 
     if (this.direcao == DIRECAO_ESQUERDA) {
       tiro.velo_x = -20
@@ -38,7 +42,6 @@ class Heroi {
     }
 
     this.animacao.novoSprite(tiro)
-    console.log('atirou')
   }
 
   desenhar() {

@@ -46,7 +46,6 @@ class Sonic {
             this.sheet.linha = 0
             this.andando = false
         }
-
     }
 
     desenhar() {

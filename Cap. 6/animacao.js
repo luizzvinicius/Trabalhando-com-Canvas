@@ -18,6 +18,7 @@ class Animacao {
     
     novoSprite(sprite) {
         this.sprites.push(sprite)
+        sprite.animacao = this
     }
 
     ligar() {

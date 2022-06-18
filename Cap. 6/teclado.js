@@ -1,9 +1,9 @@
 'use strict'
-let SETA_ESQUERDA = 37;
-let SETA_DIREITA = 39;
-let SETA_CIMA = 38;
-let SETA_BAIXO = 40;
 let ESPACO = 32;
+let SETA_ESQUERDA = 37;
+let SETA_CIMA = 38;
+let SETA_DIREITA = 39;
+let SETA_BAIXO = 40;
 
 class Teclado {
   constructor(elem) {

@@ -2,7 +2,6 @@
 class Colisor {
     constructor() {
         this.sprites = []
-        this.aoColidir = null
     }
 
     processar() { // testar todos os sprites se colidiram
@@ -30,7 +29,7 @@ class Colisor {
 
     stringUnica(sprite) {
         let str = ''
-        var retangulos = sprite.retangulosColisao()
+        let retangulos = sprite.retangulosColisao()
 
         for (let i in retangulos) {
             str += 'x: ' + retangulos[i].x + ',' +
@@ -46,16 +45,13 @@ class Colisor {
         let rets1 = sprite1.retangulosColisao()
         let rets2 = sprite2.retangulosColisao()
 
-        colisoes:
         for (let i in rets1) {
             for (let j in rets2) {
                 if (this.retangulosColidem(rets1[i], rets2[j])) {
                     sprite1.colidiuCom(sprite2)
                     sprite2.colidiuCom(sprite1)
 
-                    if (this.aoColidir) this.aoColidir(sprite1, sprite2)
-
-                    break colisoes // não precisa verificar os outros retangulos
+                    break // não precisa verificar os outros retangulos
                 }
             }
         }

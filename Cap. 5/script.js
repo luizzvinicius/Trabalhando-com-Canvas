@@ -3,7 +3,7 @@ const canvas = document.querySelector('#canvas')
 const ctx = canvas.getContext('2d')
 
 let bola1 = new Bola(ctx)
-bola1.x = 12
+bola1.x = 15
 bola1.y = 20
 bola1.velo_x = 6
 bola1.velo_y = 10

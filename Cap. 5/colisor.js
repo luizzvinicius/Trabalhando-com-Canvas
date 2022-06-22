@@ -18,7 +18,7 @@ class Colisor {
                 if (!jaTestados[id1]) jaTestados[id1] = []
                 if (!jaTestados[id2]) jaTestados[id2] = []
 
-                if (! (jaTestados[id1].indexOf(id2) >= 0 || jaTestados[id2].indexOf(id1) >= 0)) {
+                if (!(jaTestados[id1].indexOf(id2) >= 0 || jaTestados[id2].indexOf(id1) >= 0)) {
                     this.testarColisao(this.sprites[i], this.sprites[j])
 
                     jaTestados[id1].push(id2)
